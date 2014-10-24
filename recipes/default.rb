@@ -72,9 +72,10 @@ unless node[:galaxy-toolshed][:initfile].nil?
         action     :create
     end
     bash "add_galaxy-toolshed_service" do
-        code <<-EOL
-            chkconfig --add galaxy-toolshed
-        EOL
+        code "chkconfig --add galaxy-toolshed"
+        user root
+
+        action :run
     end
     service "galaxy-toolshed" do
         action [:enable, :start]
