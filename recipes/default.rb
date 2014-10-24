@@ -62,7 +62,7 @@ template "#{node[:galaxy-toolshed][:path]}/#{node[:galaxy-toolshed][:config]}" d
     action     :create
 end
 
-if node[:galaxy-toolshed][:initfile]
+unless node[:galaxy-toolshed][:initfile].nil?
     template node[:galaxy-toolshed][:initfile] do
         owner      "root"
         group      "root"
