@@ -29,3 +29,4 @@ end
 # repository 
 default[:galaxy-toolshed][:repository]    = "https://bitbucket.org/galaxy/galaxy-dist/"
 
+default[:galaxy-toolshed][:proxy_set]     = false
